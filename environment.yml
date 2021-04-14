@@ -90,3 +90,4 @@ dependencies:
     - gputil==1.4.0
     - pygments==2.8.1
     - rich==10.1.0
+    - pytest==5.4.0
