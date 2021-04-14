@@ -3,24 +3,15 @@ import torch.nn as nn
 
 __all__ = ["Conv", "Seq1", "Seq2", "Seq3"]
 
-'''
+"""
 Each of the convolutions in this file correspond to sequences in 
 section 7.3 of the paper. 
-'''
+"""
+
 
 class ConvModule(nn.Module):
     def _cache_sizes(self, x, convs):
         self._sizecache = []
-
-        N, CI, H, W = x.size()
-        CO, KH, KW, stride, pad, G = (
-            convs[0].out_channels,
-            convs[0].kernel_size[0],
-            conv[0].kernel_size[1],
-            convs[0].stride[0],
-            convs[0].padding[0],
-            convs[0].groups,
-        )
 
         for conv in convs:
             N, CI, H, W = x.size()
