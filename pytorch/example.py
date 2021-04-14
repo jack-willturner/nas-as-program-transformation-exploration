@@ -20,17 +20,17 @@ def gen_random_net_config():
         configs_ = []
         for i, layer in enumerate(range(block)):
             subconfig = {}
-            conv = np.random.choice([Conv, SplitConv, UnrollConv, SpatialGroupConv])
+            conv = np.random.choice([Conv, Seq1, Seq2, Seq3])
             subconfig["conv"] = conv
             subconfig["stride"] = stride if i == 0 else 1
-            if conv == SplitConv:
+            if conv == Seq1:
                 sf = np.random.choice([1, 2, 4, 8])
                 subconfig["split_factor"] = sf
                 subconfig["groups"] = np.random.choice([1, 2, 4, 8], sf)
-            elif conv == UnrollConv:
+            elif conv == Seq2:
                 subconfig["unroll_factor"] = np.random.choice([1, 2, 4, 8, 16])
                 subconfig["unrollconv_groups"] = np.random.choice([1, 2, 3, 4])
-            elif conv == SpatialGroupConv:
+            elif conv == Seq3:
                 sf = np.random.choice([1, 2, 4, 8])
                 subconfig["split_factor"] = sf
 
@@ -46,7 +46,8 @@ for i in range(100):
 
         test = torch.randn((1, 3, 32, 32))
         model(test)
-    except:
+    except Exception as e:
+        print(e)
         invalid += 1
 
 print(f"{100-invalid}/100 configs were valid")
