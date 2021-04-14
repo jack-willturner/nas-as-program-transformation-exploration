@@ -31,4 +31,7 @@ jobs:
           python-version: 3.8
 
       - name: PyTest tests
-        run: pytest
+        run: |
+          conda activate loops
+          conda install pytest
+          pytest
