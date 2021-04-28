@@ -29,9 +29,7 @@ jobs:
           activate-environment: loops
           environment-file: environment.yml
           python-version: 3.8
-
-      - name: PyTest tests
-        run: |
-          conda activate loops
-          conda install pytest
-          pytest
+          
+      - name: Mathjax hack
+        shell: bash -l {0}
+        run: pytest
