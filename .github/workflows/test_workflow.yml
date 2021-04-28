@@ -30,6 +30,6 @@ jobs:
           environment-file: environment.yml
           python-version: 3.8
           
-      - name: Mathjax hack
+      - name: Run tests
         shell: bash -l {0}
         run: pytest
