@@ -61,6 +61,7 @@ dependencies:
   - pip=21.0.1=py38h06a4308_0
   - pyparsing=2.4.7=pyhd3eb1b0_0
   - pyqt=5.9.2=py38h05f1152_4
+  - pytest=6.2.3=py38h578d9bd_0
   - python=3.8.8=hdb3f193_4
   - python-dateutil=2.8.1=pyhd3eb1b0_0
   - python_abi=3.8=1_cp38
